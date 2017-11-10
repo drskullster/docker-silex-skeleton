@@ -1,7 +1,6 @@
 ## What's this?
 This skeleton allows to have a working Silex application running inside a docker container completely out of the box.
-## Features
-* Run as a Docker container: 
+## Features 
 * Run as a Docker container: only one dependency, Docker. It can be deployed in any decent modern server. It can be deployed in a matter of 2-4 minutes
 * Apache with configurable ports: Both the external and the internal ports are configurable as environment variables. This allows to run the container as a non-root user (as some third-party Docker build services do), so Apache can bind ports other than 80 and 443
 * Silex application: backed and endorsed by Symfony and its components, nothing else to say.
