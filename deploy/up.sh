@@ -27,9 +27,6 @@ docker build \
     --build-arg XDEBUG_REMOTE_HOST=$XDEBUG_REMOTE_HOST \
     -t docker_silex_skeleton:latest $PWD/..
 
-echo ">>>> Installing dependencies"
-#php $PWD/../www/composer.phar install --prefer-dist --no-interaction --ignore-platform-reqs --working-dir=$PWD/../www
-
 echo ">>>> Removing old container"
 docker rm -f docker_silex_skeleton || true
 
