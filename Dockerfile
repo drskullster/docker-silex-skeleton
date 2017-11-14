@@ -44,7 +44,7 @@ ARG XDEBUG_REMOTE_HOST=localhost
 
 #### Set environment variables (These will be persisted in the image, so available in the container)
 ### Apache
-ENV INSIDE_PORT $INSIDE_PORT
+ENV PORT $INSIDE_PORT
 ENV HOST_NAME ${HOST_NAME}
 ### Application
 ENV APP_ENV $APP_ENV
