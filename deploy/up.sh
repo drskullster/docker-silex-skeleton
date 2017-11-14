@@ -30,6 +30,9 @@ docker build \
 echo ">>>> Removing old container"
 docker rm -f docker_silex_skeleton || true
 
+echo ">>>> Installing dependencies"
+php $PWD/../www/composer.phar install --prefer-dist --no-interaction --ignore-platform-reqs --working-dir=$PWD/../www
+
 echo ">>>> Running new container"
 docker run --name docker_silex_skeleton -d -p $OUTSIDE_PORT:$INSIDE_PORT -v $PWD/../www:/var/www/html docker_silex_skeleton:latest
 

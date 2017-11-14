@@ -29,7 +29,6 @@ RUN php /var/www/html/www/composer.phar install --no-scripts --no-autoloader --w
 
 #### Read build arguments, with default values
 ### Apache
-ARG OUTSIDE_PORT=80
 ARG INSIDE_PORT=80
 ARG APACHE_USER=root
 ARG HOST_NAME="app.com"
@@ -45,7 +44,7 @@ ARG XDEBUG_REMOTE_HOST=localhost
 #### Set environment variables (These will be persisted in the image, so available in the container)
 ### Apache
 ENV PORT $INSIDE_PORT
-ENV HOST_NAME ${HOST_NAME}
+ENV HOST_NAME $HOST_NAME
 ### Application
 ENV APP_ENV $APP_ENV
 ENV APP_DEBUG $APP_DEBUG
