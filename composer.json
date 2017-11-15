@@ -1,4 +1,5 @@
 {
+    "name": "gbmcarlos/docker-silex-skeleton",
     "require": {
         "silex/silex": "2.2.0",
         "twig/twig": "2.4.4",
