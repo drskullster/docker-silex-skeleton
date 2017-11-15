@@ -1,11 +1,11 @@
 ## What's this?
 This skeleton allows to have a working Silex application running inside a docker container completely out of the box, and configurable through environment variables.
 ## Features 
-* Run as a Docker container: only one dependency, Docker. It can be deployed in any decent modern server. It can be deployed in a matter of minutes
-* Apache with configurable ports: Both the external and the internal ports are configurable. This allows to run the container as a non-root user (as some third-party Docker build services do), so Apache can bind ports other than 80 and 443
-* Silex application: backed and endorsed by Symfony and its components, nothing else to say.
+* Run as a [Docker](https://docs.docker.com/) container: only one dependency, Docker. It can be deployed in any decent modern server. It can be deployed in a matter of minutes
+* Apache with configurable ports: Both the external and the internal ports are configurable. This allows to have Apache bind ports other than 80 and 443, in case the container will run as a non-root user (as some third-party Docker build services do) 
+* [Silex](https://silex.symfony.com/doc/2.0/) application: backed and endorsed by [Symfony and its components](https://symfony.com/components), nothing else to say.
 * Service and routing registrars: register services (and controllers) and routes easily
-* Packed with Bootstrap and jQuery: included from CDNs in the Twig layout
+* Packed with [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) and [jQuery](http://api.jquery.com/): included from CDNs in the [Twig](https://twig.symfony.com/doc/2.x/) layout
 * `up.sh` included: get the application running in your local with the simple command `./deploy/up.sh`
 * Lots of environment variables to configure
 ## How to use it
@@ -14,7 +14,7 @@ This skeleton allows to have a working Silex application running inside a docker
 * Start working
 ## Requirements
 * Docker
-* To run it locally you wll need php and composer, as the dependencies are installed outside the docker container using composer ([here](https://getcomposer.org/download/)'s how to get composer)
+* To run it locally you wll need php 7.1 and composer, as the dependencies are installed outside the docker container using composer ([here](https://getcomposer.org/download/)'s how to get composer)
 ## Environment variables available
 
 |       ENV VAR      | Default value | Description |
