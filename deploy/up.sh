@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export OUTSIDE_PORT=${OUTSIDE_PORT:=80}
-export INSIDE_PORT=${INSIDE_PORT:=80}
+export HOST_PORT=${HOST_PORT:=80}
+export CONTAINER_PORT=${INSIDE_PORT:=80}
 export APACHE_USER=${APACHE_USER:=root}
 export HOST_NAME=${HOST_NAME:=app.com}
 
@@ -17,7 +17,7 @@ echo ">>>> Moving to $(dirname "$0")"
 cd "$(dirname "$0")"
 echo ">>>> Building docker image"
 docker build \
-    --build-arg INSIDE_PORT=$INSIDE_PORT \
+    --build-arg CONTAINER_PORT=$CONTAINER_PORT \
     --build-arg APACHE_USER=$APACHE_USER \
     --build-arg HOST_NAME=$HOST_NAME \
     --build-arg APP_ENV=$APP_ENV \
@@ -36,7 +36,7 @@ php $PWD/../www/composer.phar install --prefer-dist --no-interaction --ignore-pl
 mv $PWD/../www/composer.* $PWD/../
 
 echo ">>>> Running new container"
-docker run --name docker_silex_skeleton -d -p $OUTSIDE_PORT:$INSIDE_PORT -v $PWD/../www:/var/www/html docker_silex_skeleton:latest
+docker run --name docker_silex_skeleton -d -p HOST_PORT:$CONTAINER_PORT -v $PWD/../www:/var/www/html docker_silex_skeleton:latest
 
 echo ">>>> Tailing logs"
 docker logs -f docker_silex_skeleton
