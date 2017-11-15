@@ -12,6 +12,8 @@ RUN    apt-get update \
         zip \
         libpng12-dev libjpeg-dev \
     && rm -rf /var/lib/apt/lists/*
+## Install and enable Xdebug
+RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
 
 #### Install application dependencies
 ###
