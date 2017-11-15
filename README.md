@@ -25,7 +25,7 @@ This skeleton allows to have a working Silex application running inside a docker
 | HOST_NAME          | app.com       | The host name passed to Apache in the virtual host. |
 | APP_ENV            | prod          | Environment variable available inside the Docker container, useful for the application. |
 | APP_DEBUG          | false         | Environment variable available inside the Docker container, useful for the application. |
-| XDEBUG_ENABLE      | off           | (`off`|`on`) This options enables and disables Xdebug/ |
+| XDEBUG_ENABLE      | off           | (`off`\|`on`) This options enables and disables Xdebug. |
 | XDEBUG_IDEKEY      | idekey        | Specify the IDE Key for Xdebug. |
 | XDEBUG_REMOTE_PORT | 9000          | Specify the remote port for Xdebug. |
 | XDEBUG_REMOTE_HOST | localhost     | Specify the remote host for Xdebug |
