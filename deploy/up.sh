@@ -36,7 +36,7 @@ php $PWD/../www/composer.phar install --prefer-dist --no-interaction --ignore-pl
 mv $PWD/../www/composer.* $PWD/../
 
 echo ">>>> Running new container"
-docker run --name docker_silex_skeleton -d -p HOST_PORT:$CONTAINER_PORT -v $PWD/../www:/var/www/html docker_silex_skeleton:latest
+docker run --name docker_silex_skeleton -d -p $HOST_PORT:$CONTAINER_PORT -v $PWD/../www:/var/www/html docker_silex_skeleton:latest
 
 echo ">>>> Tailing logs"
 docker logs -f docker_silex_skeleton
