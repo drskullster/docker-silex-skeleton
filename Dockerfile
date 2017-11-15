@@ -23,9 +23,9 @@ RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
 ###
 
 ## Copy composer json, lock and phar
-COPY ./composer.* /var/www/html/www/
+COPY ./composer.* /var/www/html/
 ## Install the dependences
-RUN php /var/www/html/www/composer.phar install --no-scripts --no-autoloader --working-dir=/var/www/html/www
+RUN php /var/www/html/composer.phar install --no-scripts --no-autoloader --working-dir=/var/www/html
 
 ##### CONFIGURATION
 
@@ -99,7 +99,7 @@ RUN sed -i 's/^Listen 80/#Listen80/' /etc/apache2/ports.conf
 ## Copy de application's source code
 COPY ./www /var/www/html
 ## And now dump the autoload
-RUN php /var/www/html/www/composer.phar dump-autoload --optimize  --working-dir=/var/www/html/www
+RUN php /var/www/html/composer.phar dump-autoload --optimize  --working-dir=/var/www/html
 
 ## Copy Apache run script (this is the script that will be run as entrypoint, i.e. the script to run to start the container)
 COPY ./deploy/apache/run.sh  /run.sh
