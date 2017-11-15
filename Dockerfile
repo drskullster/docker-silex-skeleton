@@ -21,7 +21,7 @@ RUN    apt-get update \
 ###
 
 ## Copy composer json, lock and phar
-COPY ./www/composer.* /var/www/html/www/
+COPY ./composer.* /var/www/html/www/
 ## Install the dependences
 RUN php /var/www/html/www/composer.phar install --no-scripts --no-autoloader --working-dir=/var/www/html/www
 
@@ -97,7 +97,7 @@ RUN sed -i 's/^Listen 80/#Listen80/' /etc/apache2/ports.conf
 ## Copy de application's source code
 COPY ./www /var/www/html
 ## And now dump the autoload
-RUN php /var/www/html/www/composer.phar dump-autoload --optimize
+RUN php /var/www/html/www/composer.phar dump-autoload --optimize  --working-dir=/var/www/html/www
 
 ## Copy Apache run script (this is the script that will be run as entrypoint, i.e. the script to run to start the container)
 COPY ./deploy/apache/run.sh  /run.sh
