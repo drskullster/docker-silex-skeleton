@@ -30,3 +30,5 @@ This skeleton allows to have a working Silex application running inside a docker
 | XDEBUG_REMOTE_PORT | 9000          | Specify the remote port for Xdebug. |
 | XDEBUG_REMOTE_HOST | localhost     | Specify the remote host for Xdebug |
 
+Example:
+`CONTAINER_PORT=8000 APACHE_USER=www-data XDEBUG_ENABLE=on ./deploy/up.sh`
