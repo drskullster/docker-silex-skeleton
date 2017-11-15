@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-docker exec -it docker_silex_skeleton php vendor/phpunit/phpunit/phpunit
+echo ">>>> Moving to $(dirname "$0")"
+cd "$(dirname "$0")"
+
+echo ">>>> Executing tests"
+docker exec -it docker_silex_skeleton php $PWD/../www/vendor/phpunit/phpunit/phpunit
