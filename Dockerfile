@@ -96,7 +96,7 @@ RUN a2dissite 000-default && a2ensite main
 ## Don't listen by default port 80
 RUN sed -i 's/^Listen 80/#Listen80/' /etc/apache2/ports.conf
 
-## Copy de application's source code
+## Copy the application's source code
 COPY ./www /var/www/html
 ## And now dump the autoload
 RUN php /var/www/html/composer.phar dump-autoload --optimize  --working-dir=/var/www/html
